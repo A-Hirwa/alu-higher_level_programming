@@ -10,7 +10,6 @@ class Square:
             raise TypeError("size must be an integer")
         elif size < 0:
             raise ValueError("size must be >= 0")
-  
     @property
     def size(self):
         """Return size"""
@@ -33,6 +32,6 @@ class Square:
         """Print square"""
         for i in range(self.__size):
             if self.__size == 0:
-                print()
+                print("")
             else:
                 print("#" * self.__size)
