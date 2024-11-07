@@ -3,7 +3,7 @@
 
 
 def inherits_from(obj, a_class):
-    '''Function returns true if obj is an sub class and false if not    
+    '''Function returns true if obj is an sub class and false if not
     Args:
         obj: object to check
         a_class: class to check
