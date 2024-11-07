@@ -8,5 +8,4 @@ def inherits_from(obj, a_class):
         obj: object to check
         a_class: class to check
     '''
-    x = issubclass(obj, a_class)
-    return isinstance(obj, a_class)and type(obj) != a_class
+    return isinstance(obj, a_class) and type(obj) != a_class
