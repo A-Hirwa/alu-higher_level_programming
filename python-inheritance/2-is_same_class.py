@@ -9,5 +9,4 @@ def is_same_class(obj, a_class):
         obj: object to check
         a_class: class to check
     '''
-    x = isinstance(obj, a_class)
-    return x
+    return type(obj) is a_class
