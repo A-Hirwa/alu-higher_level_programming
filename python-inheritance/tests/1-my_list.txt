@@ -1,0 +1,2 @@
+Creating a class that inherits fromlist
+add a function that sorts the list
