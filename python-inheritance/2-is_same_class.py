@@ -1,12 +1,13 @@
 #!/usr/bin/python3
-'''This file creates a class that inherits from List builtin functions '''
+'''Creates a function that tests if objects are instances of a class'''
 
 
-class MyList(list):
-    '''This Class inherits the built in function list'''
-
-    def print_sorted(self):
-        '''Prints the list in a sorted order  '''
-        sorted_list = self[:]
-        sorted_list.sort()
-        print("{}".format(sorted_list))
+def is_same_class(obj, a_class):
+    '''Function returns true if obj is an instance and false if not
+    
+    Args:
+        obj: object to check
+        a_class: class to check
+    '''
+    x = isinstance(obj, a_class)
+    return x
