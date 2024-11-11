@@ -2,7 +2,8 @@
 """
 9-student.py
 
-This module has a class with a function that returns a dictionary representation of the class
+This module has a class with a function that 
+returns a dictionary representation of the class
 """
 
 
@@ -22,6 +23,7 @@ class Student:
         self.first_name = first_name
         self.last_name = last_name
         self.age = age
+
     def to_json(self):
         """
         function returns dictionary representation of a class
