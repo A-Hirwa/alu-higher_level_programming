@@ -6,6 +6,8 @@ This module has a function that converts a string to JSON
 """
 
 
+import json
+
 def to_json_string(my_obj):
     """
     This functions converts a string to JSON
