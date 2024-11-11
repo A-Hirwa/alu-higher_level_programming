@@ -13,7 +13,7 @@ def load_from_json_file(filename):
     """
     This function creates an object from a JSON file
 
-    Args: 
+    Args:
         filename: file to use
     """
     with open(filename, "r") as f:
