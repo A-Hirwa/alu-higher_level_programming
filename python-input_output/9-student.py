@@ -2,7 +2,7 @@
 """
 9-student.py
 
-This module has a class with a function that 
+This module has a class with a function that
 returns a dictionary representation of the class
 """
 
