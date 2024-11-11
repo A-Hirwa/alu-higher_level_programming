@@ -6,7 +6,7 @@ This module has a class with a function that returns a dictionary representation
 """
 
 
-class student:
+class Student:
     """
     This is a class that defines a student
 
