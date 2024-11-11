@@ -3,7 +3,7 @@
 0-read_file.py
 
 This module contains a function that reads a passed in file.
-"""i
+"""
 
 
 def read_file(filename=""):
