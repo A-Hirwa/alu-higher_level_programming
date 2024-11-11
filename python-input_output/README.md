@@ -1,0 +1,1 @@
+Regarding input and output
