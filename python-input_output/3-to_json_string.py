@@ -15,5 +15,5 @@ def to_json_string(my_obj):
     Args:
         my_obj: the string to convert
     """
-    result = json.loads(my_obj)
+    result = json.dumps(my_obj)
     return result
