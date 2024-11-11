@@ -4,6 +4,8 @@
 
 This module as a function that adds a string to a file
 """
+
+
 def write_file(filename="", text=""):
     """
     This function adds a string to a file
