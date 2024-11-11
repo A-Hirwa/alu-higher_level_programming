@@ -4,7 +4,7 @@
 
 This module as a function that adds a string to a file
 """
-def append_write(filename="", text=""):
+def write_file(filename="", text=""):
     """
     This function adds a string to a file
 
