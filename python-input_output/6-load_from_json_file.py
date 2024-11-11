@@ -17,4 +17,5 @@ def load_from_json_file(filename):
         filename: file to use
     """
     with open(filename, "r") as f:
-        json.load(f)
+        result = json.load(f)
+    return result
