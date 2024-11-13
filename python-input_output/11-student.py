@@ -46,5 +46,7 @@ class Student:
             self: the object whose attributes are to be replaced
             json: the new attributes
         """
-        self.__dict__ = json
+        for key, value in json.items():
+            if key in self.__dict__:
+                self.__dict__[key] = value
         return self.__dict__
