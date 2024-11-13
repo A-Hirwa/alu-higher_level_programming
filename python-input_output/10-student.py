@@ -5,7 +5,6 @@
 This module has a student class and a function to return attributes
 """
 
-
 class Student:
     """
     This is a class that defines a student
@@ -30,7 +29,11 @@ class Student:
         Args:
             self
         """
-        if all(isinstance(attr, str) for attr in attrs):
-            if attr in self.__dict__:
-                print(attr)
-        return attrs
+        if type(attrs) == list:
+            attr_dict = {}
+            for i in range(len(attrs)):
+                if attrs[i] in self.__dict__:
+                    attr_dict[attrs[i]] = self.__dict__[attrs[i]]
+            return attr_dict
+        else:
+            return self.__dict__
