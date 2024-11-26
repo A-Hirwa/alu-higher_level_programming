@@ -1,10 +1,11 @@
 #!/usr/bin/python3
-"""Displays the X-Request-Id header value from a URL"""
+"""A script that displays the value of the x-request ID."""
 
-import urllib.request
-import sys
 
-if __name__ == "__main__":
-    url = sys.argv[1]
-    with urllib.request.urlopen(url) as response:
-        print(response.headers.get("X-Request-Id"))
+if __name__ == '__main__':
+    from urllib.request import urlopen
+    import sys
+
+    with urlopen(sys.argv[1]) as re:
+        header_var = re.headers.get('X-Request-Id')
+        print(header_var)
