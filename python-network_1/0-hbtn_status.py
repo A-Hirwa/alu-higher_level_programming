@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-"""Fetched from https://intranet.hbtn.io/status"""
 import urllib.request
 
 url = 'https://intranet.hbtn.io/status'
