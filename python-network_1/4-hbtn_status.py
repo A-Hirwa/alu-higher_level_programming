@@ -9,7 +9,7 @@ if __name__ == "__main__":
         "http://0.0.0.0:5050/status",
     ]
 
-    if url in urls:
+    for url in urls:
         response = requests.get(url)
         print("Fetching from: {}".format(url))
         print("Body response:")
