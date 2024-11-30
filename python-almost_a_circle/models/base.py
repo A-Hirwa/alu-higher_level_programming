@@ -34,7 +34,7 @@ class Base:
         """
         if list_dictionaries is None or list_dictionaries == []:
             return "[]"
-        return json.dumps(list_dictionaries)
+        return json.dumps(list_dictionaries, sort_keys=True)
 
     @classmethod
     def save_to_file(cls, list_objs):
@@ -47,7 +47,7 @@ class Base:
                 jsonfile.write("[]")
             else:
                 list_dicts = [o.to_dictionary() for o in list_objs]
-                jsonfile.write(Base.to_json_string(list_dicts))
+                jsonfile.write(cls.to_json_string(list_dicts))
 
     @staticmethod
     def from_json_string(json_string):
