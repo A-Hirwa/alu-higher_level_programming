@@ -20,8 +20,4 @@ if __name__ == "__main__":
     for i in tables:
         print(i)
     cr.close()
-<<<<<<< HEAD
     db.close()
-=======
-    db.close()
->>>>>>> e044d0c9abbbf6b0dc41108d29ad1a6d98fce128
