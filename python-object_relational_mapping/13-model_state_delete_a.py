@@ -7,7 +7,7 @@ from model_state import Base, State
 
 
 if __name__ == "__main__":
-    """connectoin"""
+    """connection"""
     creator = create_engine(
         "mysql+mysqldb://{}:{}@localhost/{}".format(
             sys.argv[1], sys.argv[2], sys.argv[3]),
@@ -15,7 +15,5 @@ if __name__ == "__main__":
     Base.metadata.create_all(creator)
     Session = sessionmaker(bind=creator)
     session = Session()
-    resul = session.query(State).filter(
-        State.name.contains('a')).order_by(asc(State.id))
-    for i in resul:
-        print(str(i.id) + ":", i.name)
+    session.query(State).filter(State.name.contains('a')).delete()
+    session.commit()
