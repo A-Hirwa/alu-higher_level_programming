@@ -2,6 +2,7 @@
 """Test Rectangle"""
 
 import unittest
+import json
 from io import StringIO
 from unittest.mock import patch
 import os
