@@ -45,40 +45,47 @@ class TestBase(unittest.TestCase):
         """Test saving objects to JSON file"""
         Base._Base__nb_objects = 0
 
+        # Test saving None to file
         Square.save_to_file(None)
-
         self.assertTrue(os.path.isfile("Square.json"))
-
         with open("Square.json") as file:
             self.assertEqual(json.loads(file.read()), [])
 
+        # Test saving an empty list to file
         Square.save_to_file([])
         with open("Square.json") as file:
             self.assertEqual(json.loads(file.read()), [])
             self.assertIsInstance(file.read(), str)
 
+        # Test saving a list with a single Square
         Square.save_to_file([Square(1)])
         with open("Square.json") as file:
-            self.assertEqual(json.loads(file.read()),
-                             '[{"id": 1, "size": 1, "x": 0, "y": 0}]')
+            self.assertEqual(
+                json.loads(file.read()), [{"id": 1, "size": 1, "x": 0, "y": 0}]
+        )
+
         Base._Base__nb_objects = 0
 
+        # Test saving None to file for Rectangle
         Rectangle.save_to_file(None)
         self.assertTrue(os.path.isfile("Rectangle.json"))
-        
         with open("Rectangle.json") as file:
             self.assertEqual(json.loads(file.read()), [])
 
+        # Test saving an empty list to file for Rectangle
         Rectangle.save_to_file([])
         with open("Rectangle.json") as file:
             self.assertEqual(json.loads(file.read()), [])
             self.assertIsInstance(file.read(), str)
 
+        # Test saving a list with a single Rectangle
         Rectangle.save_to_file([Rectangle(1, 2)])
         with open("Rectangle.json") as file:
-            self.assertEqual(json.loads(file.read()),
-                             '[{"id": 1, "width": 1, '
-                             '"height": 2, "x": 0, "y": 0}]')
+            self.assertEqual(
+                json.loads(file.read()),
+                [{"id": 1, "width": 1, "height": 2, "x": 0, "y": 0}],
+        )
+
     @classmethod
     def tearDownClass(cls):
         """End of test output"""
