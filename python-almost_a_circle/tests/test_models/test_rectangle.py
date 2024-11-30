@@ -181,24 +181,27 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r1.y, 4)
 
     def test_save_to_file(self):
-        """Doc"""
+        """Test saving objects to JSON file."""
         Base._Base__nb_objects = 0
 
+        # Test saving None
         Rectangle.save_to_file(None)
         self.assertTrue(os.path.isfile("Rectangle.json"))
         with open("Rectangle.json") as file:
             self.assertEqual(json.loads(file.read()), [])
 
+        # Test saving an empty list
         Rectangle.save_to_file([])
         with open("Rectangle.json") as file:
             self.assertEqual(json.loads(file.read()), [])
-            self.assertEqual(type(file.read()), str)
 
+        # Test saving a single Rectangle
         Rectangle.save_to_file([Rectangle(1, 2)])
         with open("Rectangle.json") as file:
-            self.assertEqual(json.loads(file.read()),
-                             '[{"id": 1, "width": 1, '
-                             '"height": 2, "x": 0, "y": 0}]')
+            result = json.loads(file.read())
+            expected = [{"id": 1, "width": 1, "height": 2, "x": 0, "y": 0}]
+            self.assertEqual(result, expected)
+
 
     def test_save_to_file_empty(self):
         Rectangle.save_to_file([])
